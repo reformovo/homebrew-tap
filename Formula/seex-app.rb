@@ -1,8 +1,8 @@
 class SeexApp < Formula
   desc "Native desktop curve viewer for Seex"
   homepage "https://github.com/reformovo/seex"
-  url "https://github.com/reformovo/seex/archive/refs/tags/v0.1.0-beta.1.tar.gz"
-  sha256 "1b384fd4bc400091fdb34fae5bfec22f92dea5bf9d136dfb782c724374902086"
+  url "https://github.com/reformovo/seex/archive/refs/tags/v0.1.0-beta.2.tar.gz"
+  sha256 "c209dec60d440470e8b8477f66697b92074773a4803b40576f2a9f0d6cdbadda"
   license "MIT"
 
   depends_on "cargo-bundle" => :build
@@ -11,14 +11,6 @@ class SeexApp < Formula
   depends_on :macos
 
   def install
-    unless (buildpath/"crates/seex-app/resources/Seex.icns").exist?
-      system "/usr/bin/sips", "-z", "512", "512",
-             "crates/seex-app/resources/app-icon.png"
-      inreplace "crates/seex-app/Cargo.toml",
-                'icon = ["resources/app-icon@2x.png", "resources/app-icon.png"]',
-                'icon = ["resources/app-icon.png"]'
-    end
-
     cd "crates/seex-app" do
       system "cargo", "bundle", "--release", "--format", "osx"
     end
