@@ -1,14 +1,9 @@
 class SeexApp < Formula
   desc "Native desktop curve viewer for Seex"
   homepage "https://github.com/reformovo/seex"
-  url "https://github.com/reformovo/seex/archive/refs/tags/v0.1.0-beta.3.tar.gz"
-  sha256 "114e83b035f7ad683aa01e04891e2d335908299c4f08a6035582028f591f4126"
+  url "https://github.com/reformovo/seex/archive/refs/tags/v0.1.0-beta.4.tar.gz"
+  sha256 "b42e28436b5677164edfce685084dc8632c71bee7fe026a419b371145837d85d"
   license "MIT"
-
-  bottle do
-    root_url "https://ghcr.io/v2/reformovo/tap"
-    sha256 cellar: :any_skip_relocation, arm64_tahoe: "5244a0e7130746ad58611a618c41920fb73a68e5d01e7e778dd363092926055e"
-  end
 
   depends_on "cargo-bundle" => :build
   depends_on "rust" => :build
