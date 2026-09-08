@@ -5,6 +5,11 @@ class SeexApp < Formula
   sha256 "32c433f7c1e0bfd2ef6a27f95f51129fc786cff5496ac4c475116cb18353a5be"
   license "MIT"
 
+  bottle do
+    root_url "https://ghcr.io/v2/reformovo/tap"
+    sha256 cellar: :any_skip_relocation, arm64_tahoe: "8d9012a7415c7f7133eda8ce5cc15912f121429d3f924fbd0ae483bdbec7e0c7"
+  end
+
   depends_on "cargo-bundle" => :build
   depends_on "rust" => :build
   depends_on arch: :arm64
