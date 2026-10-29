@@ -1,23 +1,16 @@
 class SeexApp < Formula
   desc "Native desktop curve viewer for Seex"
   homepage "https://github.com/reformovo/seex"
-  url "https://github.com/reformovo/seex/archive/refs/tags/v0.1.0-beta.6.tar.gz"
-  sha256 "77c73265a87fd04e5a59bfcf02b85ccd8c92dbdacaa5802de99fff76292439e1"
+  version "0.1.0-beta.6"
+  url "https://github.com/reformovo/seex/releases/download/v0.1.0-beta.6/Seex-macos-aarch64.zip"
+  sha256 "92ade4001d29adabc71775ec48276d3d0c7f26e3d7f4548bbadc1adfddbfbcac"
   license "MIT"
 
-  depends_on "cargo-bundle" => :build
-  depends_on "rust" => :build
   depends_on arch: :arm64
   depends_on :macos
 
   def install
-    cd "crates/seex-app" do
-      system "cargo", "bundle", "--release", "--format", "osx"
-    end
-
-    app = "target/release/bundle/osx/Seex.app"
-    system "/usr/bin/codesign", "--force", "--deep", "--sign", "-", app
-    prefix.install app
+    prefix.install "Seex.app"
     bin.install_symlink prefix/"Seex.app/Contents/MacOS/seex-app" => "seex-app"
   end
 
