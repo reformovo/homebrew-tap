@@ -1,8 +1,8 @@
 class SeexApp < Formula
   desc "Native desktop curve viewer for Seex"
   homepage "https://github.com/reformovo/seex"
-  version "0.1.0-beta.6"
   url "https://github.com/reformovo/seex/releases/download/v0.1.0-beta.6/Seex-macos-aarch64.zip"
+  version "0.1.0-beta.6"
   sha256 "92ade4001d29adabc71775ec48276d3d0c7f26e3d7f4548bbadc1adfddbfbcac"
   license "MIT"
 
